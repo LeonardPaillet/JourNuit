@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>
+             TP7
+        </title>
+		<link rel="stylesheet" href="styles/style.css">
+		<style>
+		</style>
+	</head>
+	<body onclick="curse()">
+	  <div id='curseur'></div>
+	  <div id="page">
+		  <div class="section">
+			  <div class="cercle">
+				  <div class='soleil'></div>
+				  <div class='lune'>
+				  </div>
+				  <div class='ciel'></div>
+				  <div class="eau"></div>
+			  </div>
+			  <div class='contener'>
+				  <div class='bouton' onclick='meteo()'></div>
+			  </div>
+			  
+		  </div>
+	  </div>
+	<script src="js/script.js"></script>
+	<script>
+		var curseur = document.querySelector('#curseur');
+		function curse()
+		{
+			var e = window.event;
+			var posX = e.clientX;
+			var posY = e.clientY;
+			curseur.style.left = posX - 50;
+			curseur.style.top = posY - 50;
+			console.log(posY, posX);
+		}
+		function meteo()
+		{
+			document.querySelector('body').classList.toggle('bnuit');
+			document.querySelector('.cercle').classList.toggle('nuit');
+			document.querySelector('.soleil').classList.toggle('transijour');
+			document.querySelector('.lune').classList.toggle('transinuit');
+			document.querySelector('.bouton').classList.toggle('transib');
+		}
+	</script>
+	</body>
+</html>
